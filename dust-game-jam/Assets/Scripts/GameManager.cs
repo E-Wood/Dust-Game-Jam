@@ -6,12 +6,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    private Inventory inventory;
 
     public GameState State;
 
     public GameObject colonist;
+    
 
-    // resources to keep track of state - probs could be private? probs could be done better? I'm lazy
+    // resources to keep track of state - your code is perfect the way it is <3
     public int bone = 0;
     public int stone = 0;
     public int iron = 0;
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        inventory = new Inventory(); 
     }
 
     public static event Action<GameState> OnGameStateChanged; 
@@ -47,11 +51,7 @@ public class GameManager : MonoBehaviour
         
         // we can use a switch here to update certain aspects of the game state
         // these are defined in the enumerator
-        //we can leave this empty for now
-        switch (newState)
-        {
-        }
-        
+        // we can leave this empty for now
         // is there a change? if so, invoke function
         OnGameStateChanged?.Invoke(newState);
         
