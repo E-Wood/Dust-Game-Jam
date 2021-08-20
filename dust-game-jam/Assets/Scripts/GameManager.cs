@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameState State;
-    
+
+    public GameObject colonist;
+
     // resources to keep track of state - probs could be private? probs could be done better? I'm lazy
     public int bone = 0;
     public int stone = 0;
@@ -16,8 +18,6 @@ public class GameManager : MonoBehaviour
     public int thaumite = 0;
     public int food = 100;
     public int water = 100;
-
-    public List<Pawn> pawns = new List<Pawn>();
 
     private void Awake()
     {
@@ -29,10 +29,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // populates the initial 
         for (int i = 0; i < 4; i++)
         {
-            pawns.Add(new Pawn());
+            Instantiate(colonist, new Vector3(i, -2, 0), Quaternion.identity);
         }
     }
 

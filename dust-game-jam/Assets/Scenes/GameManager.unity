@@ -123,63 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &361649726
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2911114975990658944, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_Name
-      value: coonistSquare (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911114975990658950, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911114975990658950, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.4860063
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911114975990658950, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.7466102
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911114975990658950, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911114975990658950, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911114975990658950, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911114975990658950, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911114975990658950, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911114975990658950, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911114975990658950, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2911114975990658950, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
 --- !u!1 &763526975
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 763526976}
+  - component: {fileID: 763526977}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -209,8 +153,28 @@ Transform:
   m_Children:
   - {fileID: 1766397584}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &763526977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763526975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43cd9d2f5ec7c4249a478f2bd5d86b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  State: 0
+  colonist: {fileID: 0}
+  bone: 0
+  stone: 0
+  iron: 0
+  thaumite: 0
+  food: 100
+  water: 100
 --- !u!1001 &825189412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -224,7 +188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2134605134076839234, guid: a3235573d5d085f47a048ae340ae1842, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2134605134076839234, guid: a3235573d5d085f47a048ae340ae1842, type: 3}
       propertyPath: m_LocalPosition.x
@@ -275,13 +239,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5865535849909655612, guid: 76c48edb132262343b3a902db52eca77, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7035732055630128224, guid: 76c48edb132262343b3a902db52eca77, type: 3}
       propertyPath: m_Name
       value: FLOOR
       objectReference: {fileID: 0}
     - target: {fileID: 7035732055630128230, guid: 76c48edb132262343b3a902db52eca77, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7035732055630128230, guid: 76c48edb132262343b3a902db52eca77, type: 3}
       propertyPath: m_LocalPosition.x
@@ -369,13 +337,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   State: 0
+  colonist: {fileID: 2911114975990658944, guid: 78d0055c6b109794787a25a5db84303e, type: 3}
   bone: 0
   stone: 0
   iron: 0
   thaumite: 0
   food: 100
   water: 100
-  pawns: []
 --- !u!1 &2071072441
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +436,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5513994842669405949, guid: 0b0a99102a89392468881ebaea081735, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5513994842669405949, guid: 0b0a99102a89392468881ebaea081735, type: 3}
       propertyPath: m_LocalPosition.x
@@ -525,7 +493,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1460430144796989644, guid: 7d69f144fa41d2b4681a7437c6a1ce2a, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1460430144796989644, guid: 7d69f144fa41d2b4681a7437c6a1ce2a, type: 3}
       propertyPath: m_LocalPosition.x
