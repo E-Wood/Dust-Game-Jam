@@ -17,7 +17,7 @@ public class Pawn : ScriptableObject
     public bool isPlayerUnit;
 
     public PawnType type;
-    public new string pawnName;
+    public string pawnName;
     public GameObject pawnPrefab;
 
     public int health;

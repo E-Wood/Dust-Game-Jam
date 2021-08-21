@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
   type: 0
-  pawnName: Nikau
+  pawnName: Idle
   pawnPrefab: {fileID: 3071192162740276482, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}
-  health: 0
-  hunger: 0
-  thirst: 0
-  sleep: 0
-  attack: 0
-  workRate: 0
+  health: 100
+  hunger: 100
+  thirst: 100
+  sleep: 100
+  attack: 100
+  workRate: 100
