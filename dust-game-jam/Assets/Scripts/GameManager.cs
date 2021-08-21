@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public int thaumite = 0;
     public int food = 100;
     public int water = 100;
+    public int time = 0;
 
     private void Awake()
     {
@@ -31,10 +32,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            //Instantiate(colonist, new Vector3(i, -2, 0), Quaternion.identity);
-        }
+
     }
 
     // Update is called once per frame
