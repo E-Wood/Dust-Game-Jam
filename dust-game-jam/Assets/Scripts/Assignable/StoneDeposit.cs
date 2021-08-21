@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoneDeposit : MonoBehaviour
+public class StoneDeposit : iAssignable
 {
-    // called when a mine action is performed on this StoneDeposit
-    public void isMined()
+    //Called by pawns when in range of targeted assignable.
+    public virtual void doWork()
     {
-        // creates a stone resource through ResourceManager
+        ResourceManager.rManagerInstance.spawnDrop(ResourceManager.ResourceType.Stone, this.getPosition());
     }
 }
