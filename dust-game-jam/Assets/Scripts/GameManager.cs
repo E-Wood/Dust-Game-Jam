@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject colonist;
     
-
     // resources to keep track of state - your code is perfect the way it is <3
     public int bone = 0;
     public int stone = 0;
