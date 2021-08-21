@@ -19,16 +19,18 @@ public class basicPawn : iPawn
 
     }
 
-    public void select()
+    override public void select()
     {
         //adds the pawn to the users selection.
         pawnController.addToSelection(gameObject);
+        GetComponent<SpriteRenderer>().color = Color.green;
     }
 
-    public void deselect()
+    override public void deselect()
     {
         //removes the pawn from the users selection.
         pawnController.removeFromSelection(gameObject);
+        GetComponent<SpriteRenderer>().color = Color.gray;
     }
 
     override public void doWork()

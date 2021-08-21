@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PawnController : MonoBehaviour
 {
-    private HashSet<GameObject> selectedObjects;
+    private HashSet<GameObject> selectedObjects = new HashSet<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,14 @@ public class PawnController : MonoBehaviour
 
     public void removeFromSelection(GameObject oldSelection)
     {
-        selectedObjects.Remove(oldSelection);
+        if (selectedObjects.Contains(oldSelection))
+        {
+            selectedObjects.Remove(oldSelection);
+        }
+    }
+
+    public int getSelectedCount()
+    {
+        return selectedObjects.Count;
     }
 }

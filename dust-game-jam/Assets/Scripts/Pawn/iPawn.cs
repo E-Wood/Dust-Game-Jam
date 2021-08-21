@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class iPawn : MonoBehaviour
 {
-    protected PawnController pawnController;
+    public PawnController pawnController;
     protected iAssignable target;
 
     public void setController(GameObject controller)

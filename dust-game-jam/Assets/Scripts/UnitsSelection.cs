@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class UnitsSelection : MonoBehaviour
 {
+    public PawnController pawnController;
+
     private bool _isDraggingMouseBox = false;
     private Vector3 _dragStartPosition;
     Ray _ray;
@@ -22,7 +24,7 @@ public class UnitsSelection : MonoBehaviour
         if (_isDraggingMouseBox && _dragStartPosition != Input.mousePosition)
             _SelectUnitsInDraggingBox();
         
-        if (Globals.SELECTED_UNITS.Count > 0)
+        if (pawnController.getSelectedCount() > 0)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
                 _DeselectAllUnits();
@@ -44,9 +46,12 @@ public class UnitsSelection : MonoBehaviour
     
     private void _DeselectAllUnits()
     {
-        List<PawnManager> selectedUnits = new List<PawnManager>(Globals.SELECTED_UNITS);
-        foreach (PawnManager um in selectedUnits)
-            um.Deselect();
+        GameObject[] selectableUnits = GameObject.FindGameObjectsWithTag("Unit");
+        foreach (GameObject unit in selectableUnits)
+        {
+            iPawn unitController = unit.GetComponent<iPawn>();
+            unitController.deselect();
+        }
     }
     
     private void _SelectUnitsInDraggingBox()
@@ -60,13 +65,15 @@ public class UnitsSelection : MonoBehaviour
         bool inBounds;
         foreach (GameObject unit in selectableUnits)
         {
+            
             inBounds = selectionBounds.Contains(
                 Camera.main.WorldToViewportPoint(unit.transform.position)
             );
+            iPawn unitController = unit.GetComponent<iPawn>();
             if (inBounds)
-                unit.GetComponent<PawnManager>().Select();
+                unitController.select();
             else
-                unit.GetComponent<PawnManager>().Deselect();
+                unitController.deselect();
         }
     }
 
