@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class iAssignable : MonoBehaviour
 {
     private Vector3 position;
+    public Tool idealTool = new Tool(Tool.Type.Hands, Tool.Material.Hands);
 
     //Returns current position.
     public void setPosition(Vector3 pos)
@@ -17,6 +18,17 @@ public class iAssignable : MonoBehaviour
     {
         return position;
     }
+    
+    public void setIdealTool(Tool tool)
+    {
+        this.idealTool = tool;
+    }
+
+    public Tool getIdealTool()
+    {
+        return this.idealTool;
+    }
+    
     //Called by pawns when in range of targeted assignable.
     public virtual void doWork()
     {
