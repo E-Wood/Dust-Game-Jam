@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class iPawn : MonoBehaviour
 {
-    private GameObject target;
+    protected PawnController pawnController;
+    protected iAssignable target;
+
+    public void setController(GameObject controller)
+    {
+        pawnController = controller.GetComponent<PawnController>();
+    }
     
     public virtual void select()
     {
@@ -15,24 +21,30 @@ public class iPawn : MonoBehaviour
     public virtual void deselect()
     {
         //removes the pawn from the users selection.
-        
-    }
-    
-    public void setTarget(GameObject target)
-    {
-        //sets a target for work to the pawn.
-        this.target = null;
-    }
-    
-    public GameObject getTarget()
-    {
-        //returns the current target or null.
-        return target;
+
     }
 
     public virtual void doWork()
     {
         //either does work on the assigned target, moves to the assigned target, or idles in place.
         // TODO: Override this in extending classes
+    }
+
+    public void setTarget(GameObject target)
+    {
+        //sets a target for work to the pawn.
+        try
+        {
+            this.target = target.GetComponent<iAssignable>();
+        } catch
+        {
+            this.target = null;
+        }
+    }
+    
+    public iAssignable getTarget()
+    {
+        //returns the current target or null.
+        return target;
     }
 }
