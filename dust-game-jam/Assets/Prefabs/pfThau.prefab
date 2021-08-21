@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3089882365012150890}
   - component: {fileID: 5768204194667963676}
   - component: {fileID: 7578796770575651901}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: pfThau
   m_TagString: Untagged
   m_Icon: {fileID: 0}

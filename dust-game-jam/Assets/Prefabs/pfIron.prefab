@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8592555333842984134}
   - component: {fileID: -4487231648209370982}
   - component: {fileID: 5793861845997352503}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: pfIron
   m_TagString: Untagged
   m_Icon: {fileID: 0}

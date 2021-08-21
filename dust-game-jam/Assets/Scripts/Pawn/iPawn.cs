@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class iPawn : MonoBehaviour
+public class iPawn : MonoBehaviour
 {
     private GameObject target;
     

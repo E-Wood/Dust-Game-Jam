@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bone : iAssignable
 {
     //Called by pawns when in range of targeted assignable.
-    public virtual void doWork()
+    public override void doWork()
     {
         GameManager.Instance.bone++;
     }

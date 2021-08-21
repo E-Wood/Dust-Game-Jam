@@ -15,6 +15,7 @@ public class ResourceManager : MonoBehaviour
     public GameObject iron;
     public GameObject thaumite;
     public GameObject bDeposit;
+    public Transform depoSize;
     
     // TODO: Someone else look at this bc I feel like this is dumb - Elias
     public static ResourceManager rManagerInstance;
@@ -28,16 +29,20 @@ public class ResourceManager : MonoBehaviour
         spawnDrop(ResourceType.Iron, new Vector3(2, 0, 0));
         spawnDrop(ResourceType.Thaumite, new Vector3(3, 0, 0));
         
-        spawnDeposit(ResourceType.Bone);
+        spawnDeposit(ResourceType.Bone, new Vector3(-5, -2.4f, 0));
     }
 
-    public void spawnDeposit(ResourceType type)
+    public void spawnDeposit(ResourceType type, Vector3 spawnLocation)
     {
         switch (type)
         {
             case ResourceType.Bone:
-                BoneDeposit boneDeposit = new BoneDeposit(bDeposit);
-                deposits.Add(boneDeposit);
+                GameObject thisDepo = Instantiate(bDeposit, spawnLocation, Quaternion.identity, depoSize);
+                deposits.Add(thisDepo.GetComponent<BoneDeposit>());
+                if (deposits.Count > 0)
+                {
+                    deposits.LastOrDefault().setPosition(spawnLocation);
+                }
                 break;
             case ResourceType.Iron:
                 //resources.Add(new IronDeposit());

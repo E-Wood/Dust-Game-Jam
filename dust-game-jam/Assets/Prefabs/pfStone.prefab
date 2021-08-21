@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2833398899728219094}
   - component: {fileID: -625280942409297239}
   - component: {fileID: -8768792074847313236}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: pfStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PawnManager : MonoBehaviour
+public class PawnManager : iPawn
 {
     public Pawn _pawn;
     public Transform Idlers;
