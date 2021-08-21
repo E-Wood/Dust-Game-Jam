@@ -20,11 +20,15 @@ public class Pawn : MonoBehaviour
     
     private Task currentTask;       // I'm thinking we can handle this in a TaskManager
 
+    private PawnNeedsBar pawnNeedsBar;
+
     public Pawn(int hunger, int thirst, int sleep)
     {
         this.hunger = hunger;
         this.thirst = thirst;
         this.sleep = sleep;
+        pawnNeedsBar = GetComponent<PawnNeedsBar>();
+        pawnNeedsBar = Instantiate(pawnNeedsBar, new Vector3(transform.position.x, transform.position.y - 10, 1), Quaternion.identity);
     }
 
     public void UpdateNeeds(int value)
@@ -48,4 +52,21 @@ public class Pawn : MonoBehaviour
         Fight
     }
     
+    
+    //------------------------MOUSE STUFF---------------------
+    
+    public void OnMouseDown(){
+        
+        
+    }
+    
+    
+    public void OnMouseOver(){
+       // pawnNeedsBar.enabled = true;
+    }
+    
+    public void OnMouseExit(){
+        //pawnNeedsBar.enabled = false;
+    }
+
 }

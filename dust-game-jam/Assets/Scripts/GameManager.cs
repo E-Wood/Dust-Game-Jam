@@ -24,8 +24,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
-        inventory = new Inventory(); 
+        inventory = new Inventory();
     }
 
     public static event Action<GameState> OnGameStateChanged; 
@@ -35,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            Instantiate(colonist, new Vector3(i, -2, 0), Quaternion.identity);
+            //Instantiate(colonist, new Vector3(i, -2, 0), Quaternion.identity);
         }
     }
 
