@@ -6,12 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Colonist", menuName = "New Colonist")]
 public class Pawn : ScriptableObject
 {
-<<<<<<< Updated upstream
-    public enum PawnType
-=======
-    private int hunger;
-    private int thirst;
-    private int sleep;
+    
     private double workFactor;      // intensity of work - to calculate drain of sleep stat
     // I've a couple questions about workFactor
     
@@ -22,15 +17,15 @@ public class Pawn : ScriptableObject
      * workFactor is calculated by the current hunger, thirst and tiredness
      * alongside any buffs given by the tools equipped
      */
-    
-    private Task currentTask;       // I'm thinking we can handle this in a TaskManager
+    // BUG
+  //  private Task currentTask;       // I'm thinking we can handle this in a TaskManager 
 
     private PawnNeedsBar pawnNeedsBar;
 
     private targetMove moveTo;
 
+    /* BUG
     public Pawn(int hunger, int thirst, int sleep)
->>>>>>> Stashed changes
     {
         Idle,
         Farmer,
@@ -38,10 +33,11 @@ public class Pawn : ScriptableObject
         Digger,
         Fighter
     }
+    */
     
     public bool isPlayerUnit;
 
-    public PawnType type;
+  //  public PawnType type; BUG
     public new string pawnName;
     public GameObject pawnPrefab;
 
@@ -61,20 +57,20 @@ public class Pawn : ScriptableObject
     public float speed = 1.5f;
     public void OnMouseClick()
     {
-        //moveTo.enabled = true;
+        //moveTo.enabled = true; 
         while (true)
         {
             Debug.Log("here");
             if (Input.GetMouseButtonDown(0))
             {
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                targetPosition.z = transform.position.z;
+                //targetPosition.z = transform.position.z; BUG
                 break;
             }
 
             
         }
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+       // transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime); BUG
 
     }
 
@@ -83,8 +79,7 @@ public class Pawn : ScriptableObject
         
     }
 
-<<<<<<< Updated upstream
-=======
+
     private void OnMouseUp()
     {
 
@@ -94,17 +89,16 @@ public class Pawn : ScriptableObject
             if (Input.GetMouseButtonDown(0))
             {
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                targetPosition.z = transform.position.z;
+               // targetPosition.z = transform.position.z; BUG
                 break;
 
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+           // transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime); BUG
         }
     }
 
 
->>>>>>> Stashed changes
     public void OnMouseOver(){
        //pawnNeedsBar.enabled = true;
     }
