@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3071192162740276482, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}
       propertyPath: m_Name
-      value: pfPawn
+      value: pfPawn Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3071192162740276482, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}
       propertyPath: m_TagString
@@ -64,8 +64,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7460172041712396661, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}
+      propertyPath: distanceToWork
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460172041712396661, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}
       propertyPath: pawnController
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3071192162740276494, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}

@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 640854647}
   - component: {fileID: 640854646}
   - component: {fileID: 640854648}
+  - component: {fileID: 640854649}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -285,6 +286,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad63268e4bc8f5428781e0c2786db37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &640854649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640854645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c99c87dc7103b247abbf3b0a79cc6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deposits: []
+  resources: []
+  bone: {fileID: 5098680289817291534, guid: c137a1e22d447294984122bd07c642ef, type: 3}
+  stone: {fileID: 1001049560766174971, guid: 25edc7c3b51b8954f90cce353c6ef6f1, type: 3}
+  iron: {fileID: 8946086216978930639, guid: 2438475946194d04f83bed47001e4ecf, type: 3}
+  thaumite: {fileID: 469936091269282849, guid: 6495f7c2f1cb5c44e9108b3ce0d232bd, type: 3}
+  bDeposit: {fileID: 6638447324849948984, guid: d121d4a92639b084db05e50e9b7424b0, type: 3}
+  depoSize: {fileID: 0}
 --- !u!1 &896649679
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +818,8 @@ PrefabInstance:
       propertyPath: pawnController
       value: 
       objectReference: {fileID: 640854648}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7d0d1f18abfd74f46971086ca3ddc4d1, type: 3}
 --- !u!1 &2043228215
 GameObject:

@@ -16,6 +16,12 @@ public class UnitsSelection : MonoBehaviour
         {
             _isDraggingMouseBox = true;
             _dragStartPosition = Input.mousePosition;
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (_AssignToObjects(mousePos))
+            {
+                _DeselectAllUnits();
+                return;
+            }
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -24,7 +30,7 @@ public class UnitsSelection : MonoBehaviour
         if (_isDraggingMouseBox && _dragStartPosition != Input.mousePosition)
             _SelectUnitsInDraggingBox();
         
-        if (pawnController.getSelectedCount() > 0)
+        if (pawnController.selectedObjects.Count > 0)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
                 _DeselectAllUnits();
@@ -75,6 +81,32 @@ public class UnitsSelection : MonoBehaviour
             else
                 unitController.deselect();
         }
+    }
+
+    private bool _AssignToObjects(Vector3 clickPosition)
+    {
+        clickPosition.z = 0;
+        GameObject[] assignableUnits = GameObject.FindGameObjectsWithTag("Assignment");
+        bool inBounds;
+        foreach (GameObject assignment in assignableUnits)
+        {
+            inBounds = assignment.GetComponent<BoxCollider2D>().bounds.Contains(clickPosition);
+            if (inBounds)
+            {
+                foreach (GameObject pawn in pawnController.selectedObjects)
+                {
+                    iPawn pawnController = pawn.GetComponent<iPawn>();
+                    pawnController.setTarget(assignment);
+                }
+                return true;
+            }
+        }
+        foreach (GameObject pawn in pawnController.selectedObjects)
+        {
+            iPawn pawnController = pawn.GetComponent<iPawn>();
+            pawnController.setTarget(null);
+        }
+        return false;
     }
 
     void OnGUI()
