@@ -3,7 +3,8 @@ guid: a729d8d08683f6a4d884cab7530e981f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bDepositSprite: {fileID: 6638447324849948984, guid: d121d4a92639b084db05e50e9b7424b0, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
