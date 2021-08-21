@@ -2,10 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bone : MonoBehaviour
+public class Bone : ScriptableObject
 {
-    void isCollected()
+    public GameManager gameManager;
+    public ResourceManager resourceManager;
+    private Vector3 position;
+    public void setPosition(Vector3 pos)
     {
-        // increase bone in GameManager by 1 & remove sprite from view
+        this.position = pos;
+    }
+    public Vector3 getPosition()
+    {
+        return position;
+    }
+    public void doWork()
+    {
+        gameManager.bone++;
+        resourceManager.resources.Remove(this);
+        resourceManager.update();
     }
 }
