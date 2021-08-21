@@ -13,12 +13,6 @@ public class basicPawn : iPawn
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     override public void select()
     {
         //adds the pawn to the users selection.
@@ -51,8 +45,7 @@ public class basicPawn : iPawn
         if (this.target != null)
         {
             Vector3 movementVector = new Vector3(0, 0, 0);
-            float movementDirection = transform.position.x - this.target.transform.position.x;
-            if (movementDirection > 0) {
+            if (transform.position.x < this.target.transform.position.x) {
                 movementVector.x = 1 * speed * Time.deltaTime;
             } else
             {

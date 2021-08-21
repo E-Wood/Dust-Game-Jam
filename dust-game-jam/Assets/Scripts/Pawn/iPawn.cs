@@ -53,4 +53,9 @@ public class iPawn : MonoBehaviour
         //returns the current target or null.
         return target;
     }
+
+    public void Update()
+    {
+        doWork();
+    }
 }
