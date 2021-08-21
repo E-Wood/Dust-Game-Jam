@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class iAssignable : MonoBehaviour
 {
     private Vector3 position;
-    
+
     //Returns current position.
     public void setPosition(Vector3 pos)
     {
@@ -22,5 +22,4 @@ public class iAssignable : MonoBehaviour
     {
         // TODO: Override this in extending classes
     }
-
 }
