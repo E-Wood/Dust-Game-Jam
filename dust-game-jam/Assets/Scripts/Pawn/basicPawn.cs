@@ -28,10 +28,12 @@ public class basicPawn : iPawn
     }
 
     override public void doWork()
+    
     {
         if (this.target != null) {
             if (Vector3EX.horizontalDistance(gameObject, this.target.gameObject) <= distanceToWork)
             {
+                Debug.Log("here");
                 this.target.doWork();
             } else
             {
@@ -42,14 +44,15 @@ public class basicPawn : iPawn
 
     private void moveToTarget()
     {
+
         if (this.target != null)
         {
             Vector3 movementVector = new Vector3(0, 0, 0);
             if (transform.position.x < this.target.transform.position.x) {
-                movementVector.x = 1 * speed * Time.deltaTime;
-            } else
+                movementVector.x = 1 * speed;
+            } else if (transform.position.x > this.target.transform.position.x)
             {
-                movementVector.x = -1 * speed * Time.deltaTime;
+                movementVector.x = -1 * speed;
             }
 
             transform.position += movementVector;

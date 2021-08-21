@@ -8,11 +8,6 @@ public class iPawn : MonoBehaviour
     public PawnController pawnController;
     protected iAssignable target;
 
-    private void Update()
-    {
-        doWork();
-    }
-
     public void setController(GameObject controller)
     {
         pawnController = controller.GetComponent<PawnController>();

@@ -29,21 +29,6 @@ public class Pawn : iPawn
         //this function allows the workspeed of the pawn to be based off the tool's material. +0.5 for each tool, starting from 1 for Bone
         workSpeed = ((int)tool.material / 2) + 0.5f;
     }
-    
-    override public void doWork()
-    {
-        if (this.target != null) {
-            if (Vector3EX.horizontalDistance(gameObject, this.target.gameObject) <= distanceToWork)
-            {
-                this.target.doWork();
-            } else
-            {
-                moveToTarget();
-            }
-        }
-    }
-    
-
 
     //------------------------MOUSE STUFF---------------------
     

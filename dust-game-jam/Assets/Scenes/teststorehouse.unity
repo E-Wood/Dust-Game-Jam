@@ -123,6 +123,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &211052637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 882289733621185107, guid: 7d0d1f18abfd74f46971086ca3ddc4d1, type: 3}
+  m_PrefabInstance: {fileID: 1962991216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &211052642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211052637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf39d862fc5a4841b3cfddc3e5b1429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawnController: {fileID: 640854648}
+  distanceToWork: 0
+  speed: 0.01
 --- !u!1 &480902853
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +248,26 @@ Transform:
   m_Father: {fileID: 1266900706}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &603330809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 882289733621185107, guid: 7d0d1f18abfd74f46971086ca3ddc4d1, type: 3}
+  m_PrefabInstance: {fileID: 1746729509}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &603330814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603330809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf39d862fc5a4841b3cfddc3e5b1429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawnController: {fileID: 640854648}
+  distanceToWork: 0
+  speed: 0.01
 --- !u!1 &640854645
 GameObject:
   m_ObjectHideFlags: 0
