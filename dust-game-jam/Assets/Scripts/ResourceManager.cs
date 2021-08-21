@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    public List<iAssignable> deposits = new List<iAssignable>();   // interactible resource deposits (drop resources)
+    public static List<iAssignable> deposits = new List<iAssignable>();   // interactible resource deposits (drop resources)
     public List<iAssignable> resources = new List<iAssignable>();  // collectible resources
 
     // all the sprites to reference for drawing
@@ -23,13 +24,23 @@ public class ResourceManager : MonoBehaviour
     void Start()
     {
         rManagerInstance = this;
-        // TODO: Test Method - pls delete later
+        
+        // to anyone who sees this, including myself, I'm sorry
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Assignment"))
+        {
+            if (gameObject.GetComponent<BoneDeposit>() == null) continue;
+            
+            BoneDeposit bd = gameObject.GetComponent<BoneDeposit>();
+            bd.setPosition(gameObject.transform.position);
+            deposits.Add(bd);
+            //TODO: do this again for iron deposits when they're around
+        }
+        
+        // TODO: Test drops - pls delete later
         spawnDrop(ResourceType.Bone, new Vector3(0, 0, 0));
         spawnDrop(ResourceType.Stone, new Vector3(1, 0, 0));
         spawnDrop(ResourceType.Iron, new Vector3(2, 0, 0));
         spawnDrop(ResourceType.Thaumite, new Vector3(3, 0, 0));
-        
-        spawnDeposit(ResourceType.Bone, new Vector3(-5, -2.4f, 0));
     }
 
     public void spawnDeposit(ResourceType type, Vector3 spawnLocation)
@@ -73,9 +84,7 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
-
-
-        public enum ResourceType
+    public enum ResourceType
     {
         Bone,
         Stone,

@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public int thaumite = 0;
     public int food = 100;
     public int water = 100;
-    public int time = 0;
 
     private void Awake()
     {
@@ -38,7 +37,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float timetime = Time.time;
     }
 
     public void UpdateGameState(GameState newState)

@@ -7,6 +7,9 @@ public class basicPawn : iPawn
     public float distanceToWork;
     public float speed;
 
+    private float startOfWork = 0;      //startOfWork == 0 means no work action has been started - is idling or moving
+    private float workLength = 20;   //should be calculated as 20 (seconds) * workSpeed (currently in Pawn.cs, need to merge Pawn classes)
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,24 +35,34 @@ public class basicPawn : iPawn
         if (this.target != null) {
             if (Vector3EX.horizontalDistance(gameObject, this.target.gameObject) <= distanceToWork)
             {
-                this.target.doWork();
+                //I apologise for this implementation. It's 1:30am. 
+                if (startOfWork == 0)
+                {
+                    startOfWork = Time.time;
+                } if (Time.time - startOfWork > workLength)
+                {
+                    this.target.doWork();
+                    startOfWork = 0;    //resets work cycle
+                }
             } else
             {
                 moveToTarget();
+                startOfWork = 0;
             }
         }
     }
 
     private void moveToTarget()
     {
+
         if (this.target != null)
         {
             Vector3 movementVector = new Vector3(0, 0, 0);
             if (transform.position.x < this.target.transform.position.x) {
-                movementVector.x = 1 * speed * Time.deltaTime;
-            } else
+                movementVector.x = 1 * speed;
+            } else if (transform.position.x > this.target.transform.position.x)
             {
-                movementVector.x = -1 * speed * Time.deltaTime;
+                movementVector.x = -1 * speed;
             }
 
             transform.position += movementVector;

@@ -8,6 +8,8 @@ TagManager:
   - Colonists
   - Shrine
   - Unit
+  - Assignment
+  - BoneDeposit
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -50,6 +52,9 @@ TagManager:
     locked: 0
   - name: environmentobjects
     uniqueID: 1634560523
+    locked: 0
+  - name: resources
+    uniqueID: 3959094389
     locked: 0
   - name: colonists
     uniqueID: 2212023929

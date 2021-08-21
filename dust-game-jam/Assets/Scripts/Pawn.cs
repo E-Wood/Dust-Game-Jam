@@ -4,40 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Colonist", menuName = "New Colonist")]
-public class Pawn : ScriptableObject
+public class Pawn : iPawn
 {
-    
-    private double workFactor;      // intensity of work - to calculate drain of sleep stat
-    // I've a couple questions about workFactor
-    
-    /* So we have the global:
-     * private double workSpeed
-     *
-     * This is multiplied by workFactor, which is a value between 0 and 2
-     * workFactor is calculated by the current hunger, thirst and tiredness
-     * alongside any buffs given by the tools equipped
-     */
-    // BUG
-  //  private Task currentTask;       // I'm thinking we can handle this in a TaskManager 
-
     private PawnNeedsBar pawnNeedsBar;
 
     private targetMove moveTo;
 
-    /* BUG
-    public Pawn(int hunger, int thirst, int sleep)
-    {
-        Idle,
-        Farmer,
-        Builder,
-        Digger,
-        Fighter
-    }
-    */
-    
     public bool isPlayerUnit;
-
-  //  public PawnType type; BUG
+    
     public new string pawnName;
     public GameObject pawnPrefab;
 
@@ -46,10 +20,15 @@ public class Pawn : ScriptableObject
     public int thirst;
     public int sleep;
     public int attack;
-    public double workRate;
-    
-    
+    public float workSpeed;     //rate at which work is being done by the pawn - higher number = faster = less strain on sleep stat
 
+    public Tool tool;
+
+    public void calculateWorkSpeed()
+    {
+        //this function allows the workspeed of the pawn to be based off the tool's material. +0.5 for each tool, starting from 1 for Bone
+        workSpeed = ((int)tool.material / 2) + 0.5f;
+    }
 
     //------------------------MOUSE STUFF---------------------
     
