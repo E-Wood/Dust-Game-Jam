@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -774861896939871904}
   - component: {fileID: 6025809617681662270}
   - component: {fileID: 2648306161412513729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BoneDeposit
   m_TagString: Assignment
   m_Icon: {fileID: 0}
