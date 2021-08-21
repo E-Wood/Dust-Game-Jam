@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75d2880e71900d04584eb0c5ca22f18e, type: 3}
-  m_Name: testBuilder
+  m_Script: {fileID: 11500000, guid: 4efd9456afbb80f4694650949e5df980, type: 3}
+  m_Name: idlePawn
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
-  type: 2
-  pawnName: Benjamin
+  type: 0
+  pawnName: Nikau
   pawnPrefab: {fileID: 3071192162740276482, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}
-  health: 100
-  hunger: 100
-  thirst: 100
-  sleep: 100
-  attack: 100
-  workRate: 100
+  health: 0
+  hunger: 0
+  thirst: 0
+  sleep: 0
+  attack: 0
+  workRate: 0

@@ -2,65 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pawn : MonoBehaviour
+[CreateAssetMenu(fileName = "New Colonist", menuName = "New Colonist")]
+public class Pawn : ScriptableObject
 {
-    private int hunger;
-    private int thirst;
-    private int sleep;
-    private double workFactor;      // intensity of work - to calculate drain of sleep stat
-    // I've a couple questions about workFactor
-    
-    /* So we have the global:
-     * private double workSpeed
-     *
-     * This is multiplied by workFactor, which is a value between 0 and 2
-     * workFactor is calculated by the current hunger, thirst and tiredness
-     * alongside any buffs given by the tools equipped
-     */
-    
-    private Task currentTask;       // I'm thinking we can handle this in a TaskManager
-
-    private PawnNeedsBar pawnNeedsBar;
-
-    public Pawn(int hunger, int thirst, int sleep)
+    public enum PawnType
     {
-        this.hunger = hunger;
-        this.thirst = thirst;
-        this.sleep = sleep;
-        pawnNeedsBar = GetComponent<PawnNeedsBar>();
-        pawnNeedsBar = Instantiate(pawnNeedsBar, new Vector3(transform.position.x, transform.position.y - 10, 1), Quaternion.identity);
-    }
-
-    public void UpdateNeeds(int value)
-    {
-        hunger -= value;
-        thirst -= value;
-        sleep -= (int) (value * workFactor);
+        Idle,
+        Farmer,
+        Builder,
+        Digger,
+        Fighter
     }
     
-    // we will delegate this elsewhere
-    enum Task
-    {
-        // things a Pawn can be doing
-        Sleep,
-        Eat,
-        Drink,
-        Tend,
-        Farm,
-        Dig,
-        Build,
-        Fight
-    }
-    
-    
+    public bool isPlayerUnit;
+
+    public PawnType type;
+    public new string pawnName;
+    public GameObject pawnPrefab;
+
+    public int health;
+    public int hunger;
+    public int thirst;
+    public int sleep;
+    public int attack;
+    public double workRate;
+
+    // private PawnNeedsBar pawnNeedsBar;
+
+
     //------------------------MOUSE STUFF---------------------
     
     public void OnMouseDown(){
         
         
     }
-    
-    
+
     public void OnMouseOver(){
        // pawnNeedsBar.enabled = true;
     }
