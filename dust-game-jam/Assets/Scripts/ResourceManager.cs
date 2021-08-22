@@ -67,19 +67,27 @@ public class ResourceManager : MonoBehaviour
         {
             case ResourceType.Bone:
                 GameObject thisBone = Instantiate(bone, spawnLocation, Quaternion.identity);
-                resources.Add(thisBone.GetComponent<Bone>());
+                Bone boneCom = thisBone.GetComponent<Bone>();
+                boneCom.setGameObject(thisBone);
+                resources.Add(boneCom);
                 break;
             case ResourceType.Stone:
-                GameObject thisStone = Instantiate(stone, spawnLocation, Quaternion.identity);
-                resources.Add(thisStone.GetComponent<Stone>());
+                GameObject thisStone = Instantiate(bone, spawnLocation, Quaternion.identity);
+                Stone stoneCom = thisStone.GetComponent<Stone>();
+                stoneCom.setGameObject(thisStone);
+                resources.Add(stoneCom);
                 break;
             case ResourceType.Iron:
-                GameObject thisIron = Instantiate(iron, spawnLocation, Quaternion.identity);
-                resources.Add(thisIron.GetComponent<Iron>());
+                GameObject thisIron = Instantiate(bone, spawnLocation, Quaternion.identity);
+                Iron ironCom = thisIron.GetComponent<Iron>();
+                ironCom.setGameObject(thisIron);
+                resources.Add(ironCom);
                 break;
             case ResourceType.Thaumite:
-                GameObject thisThaumite = Instantiate(thaumite, spawnLocation, Quaternion.identity);
-                resources.Add(thisThaumite.GetComponent<Thaumite>());
+                GameObject thisThau = Instantiate(bone, spawnLocation, Quaternion.identity);
+                Bone thauCom = thisThau.GetComponent<Bone>();
+                thauCom.setGameObject(thisThau);
+                resources.Add(thauCom);
                 break;
         }
     }
