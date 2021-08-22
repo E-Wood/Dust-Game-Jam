@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameState State;
 
     public GameObject colonist;
+    public GameObject shrine;
     
     // resources to keep track of state - your code is perfect the way it is <3
     public int bone = 0;
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Instantiate(shrine, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
