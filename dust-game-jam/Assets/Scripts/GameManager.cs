@@ -22,11 +22,32 @@ public class GameManager : MonoBehaviour
     public int water = 100;
 
     public Text boneText;
+    public Text stoneText;
+    public Text ironText;
+    public Text thauText;
 
     public void incrementBone()
     {
         bone++;
         boneText.text = "Bone: " + bone;
+    }
+    
+    public void incrementStone()
+    {
+        stone++;
+        stoneText.text = "Stone: " + stone;
+    }
+    
+    public void incrementIron()
+    {
+        iron++;
+        ironText.text = "Iron: " + iron;
+    }
+    
+    public void incrementThau()
+    {
+        thaumite++;
+        thauText.text = "Thaumite: " + thaumite;
     }
 
     private void Awake()

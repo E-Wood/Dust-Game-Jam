@@ -8,7 +8,7 @@ public class Iron : Pickup
     //Called by pawns when in range of targeted assignable.
     public override void doWork()
     {
-        GameManager.Instance.iron++;
+        GameManager.Instance.incrementIron();
         Destroy(thisGO);
         ResourceManager.rManagerInstance.resources.Remove(this);
     }

@@ -8,7 +8,7 @@ public class Stone : Pickup
     //Called by pawns when in range of targeted assignable.
     public override void doWork()
     {
-        GameManager.Instance.stone++;
+        GameManager.Instance.incrementStone();
         Destroy(thisGO);
         ResourceManager.rManagerInstance.resources.Remove(this);
     }

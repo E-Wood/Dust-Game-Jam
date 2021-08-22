@@ -8,7 +8,7 @@ public class Thaumite : Pickup
     //Called by pawns when in range of targeted assignable.
     public override void doWork()
     {
-        GameManager.Instance.thaumite++;
+        GameManager.Instance.incrementThau();
         Destroy(thisGO);
         ResourceManager.rManagerInstance.resources.Remove(this);
     }
