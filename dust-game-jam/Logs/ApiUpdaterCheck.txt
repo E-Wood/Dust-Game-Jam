@@ -182,6 +182,27 @@ C# parse time         : 755ms
 candidates check time : 86ms
 console write time    : 1ms
 
+<<<<<<< HEAD
+[api-updater (non-obsolete-error-filter)] 22/08/2021 12:53:29 p.m. : Starting C:/Program Files/Unity/2020.3.16f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 1865.2996ms
+moved types parse time: 110ms
+candidates parse time : 2ms
+C# parse time         : 458ms
+candidates check time : 67ms
+console write time    : 1ms
+
+[api-updater (non-obsolete-error-filter)] 22/08/2021 12:57:13 p.m. : Starting C:/Program Files/Unity/2020.3.16f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 148.8593ms
+moved types parse time: 117ms
+candidates parse time : 6ms
+C# parse time         : 679ms
+candidates check time : 87ms
+console write time    : 1ms
+=======
 [api-updater (non-obsolete-error-filter)] 22/08/2021 10:11:15 a.m. : Starting C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
 [api-updater (non-obsolete-error-filter)] Exception caught while loading types from C:\Users\cryst\Documents\GitHub\Dust-Game-Jam\dust-game-jam\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll (some types may not be loaded)
 	Exception of type 'System.Reflection.ReflectionTypeLoadException' was thrown.
@@ -288,6 +309,7 @@ candidates parse time : 1ms
 C# parse time         : 258ms
 candidates check time : 38ms
 console write time    : 0ms
+>>>>>>> main
 
 [api-updater (non-obsolete-error-filter)] 22/08/2021 5:54:56 p.m. : Starting C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
 [api-updater (non-obsolete-error-filter)] 
