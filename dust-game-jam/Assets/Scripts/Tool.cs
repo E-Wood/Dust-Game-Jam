@@ -6,8 +6,15 @@ public class Tool
 {
     public Type type;
     public Material material;
+
+    public Tool(Type type, Material material)
+    {
+        this.type = type;
+        this.material = material;
+    }
     public enum Type
     {
+        Hands,
         Pick,
         Hoe,
         Shovel,
@@ -16,9 +23,10 @@ public class Tool
 
     public enum Material
     {
-        Bone = 1,
-        Stone = 2,
-        Iron = 3,
-        Thaumite = 4
+        Hands = 1,
+        Bone = 2,
+        Stone = 3,
+        Iron = 4,
+        Thaumite = 5
     }
 }
