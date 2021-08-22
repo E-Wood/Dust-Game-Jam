@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3120231092263222969}
-  - component: {fileID: -7478879529154309407}
   - component: {fileID: 5905076397359040053}
   - component: {fileID: 3269730382122276566}
   - component: {fileID: 7810673252243477056}
+  - component: {fileID: -6815214950519545399}
   m_Layer: 0
   m_Name: Shrine
   m_TagString: Assignment
@@ -29,28 +29,11 @@ Transform:
   m_GameObject: {fileID: 1299723724465725521}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7478879529154309407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299723724465725521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db2b6ab0d4ae42449cad99bde96aaea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  spriteArray: []
-  buildProgress: 10
-  shrineProgress: 0
-  shrineUpdate: 0
 --- !u!212 &5905076397359040053
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -153,3 +136,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11, y: 8}
   m_EdgeRadius: 0
+--- !u!114 &-6815214950519545399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299723724465725521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7785d47278f1c344a863558edad0d9eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

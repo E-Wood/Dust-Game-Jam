@@ -59,11 +59,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(shrine, new Vector3(0, -1.5f, 0), Quaternion.identity);
-        Instantiate(PawnOne, new Vector3(-4, -1, 0), Quaternion.identity);
-        Instantiate(PawnTwo, new Vector3(-2, -1, 0), Quaternion.identity);
-        Instantiate(PawnThree, new Vector3(2, -1, 0), Quaternion.identity);
-        Instantiate(PawnFour, new Vector3(4, -1, 0), Quaternion.identity);
+        Instantiate(shrine, new Vector3(0, -2, 0), Quaternion.identity);
+        // Instantiate(PawnOne, new Vector3(-4, -1, 0), Quaternion.identity);
+        // Instantiate(PawnTwo, new Vector3(-2, -1, 0), Quaternion.identity);
+        // Instantiate(PawnThree, new Vector3(2, -1, 0), Quaternion.identity);
+        // Instantiate(PawnFour, new Vector3(4, -1, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
