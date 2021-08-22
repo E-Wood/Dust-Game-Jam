@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,14 @@ public class GameManager : MonoBehaviour
     public int thaumite = 0;
     public int food = 100;
     public int water = 100;
+
+    public Text boneText;
+
+    public void incrementBone()
+    {
+        bone++;
+        boneText.text = "Bone: " + bone;
+    }
 
     private void Awake()
     {

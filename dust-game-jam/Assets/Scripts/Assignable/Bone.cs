@@ -8,7 +8,7 @@ public class Bone : Pickup
     //Called by pawns when in range of targeted assignable.
     public override void doWork()
     {
-        GameManager.Instance.bone++;
+        GameManager.Instance.incrementBone();
         Destroy(thisGO);
         ResourceManager.rManagerInstance.resources.Remove(this);
     }
