@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PawnNeedsBar : MonoBehaviour
+public class WaterDrop : iAssignable
 {
-
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<PawnNeedsBar>().enabled = false;
+        
     }
 
     // Update is called once per frame

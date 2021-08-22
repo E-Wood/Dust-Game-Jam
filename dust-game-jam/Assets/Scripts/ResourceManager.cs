@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    public static List<iAssignable> deposits = new List<iAssignable>();   // interactible resource deposits (drop resources)
+    public List<iAssignable> deposits = new List<iAssignable>();   // interactible resource deposits (drop resources)
     public List<iAssignable> resources = new List<iAssignable>();  // collectible resources
 
     // all the sprites to reference for drawing
@@ -15,9 +15,10 @@ public class ResourceManager : MonoBehaviour
     public GameObject stone;
     public GameObject iron;
     public GameObject thaumite;
-    public GameObject bDeposit;
-    public Transform depoSize;
-    
+    public GameObject food;
+    public GameObject water;
+
+
     // TODO: Someone else look at this bc I feel like this is dumb - Elias
     public static ResourceManager rManagerInstance;
 
@@ -41,24 +42,6 @@ public class ResourceManager : MonoBehaviour
         spawnDrop(ResourceType.Stone, new Vector3(1, 0, 0));
         spawnDrop(ResourceType.Iron, new Vector3(2, 0, 0));
         spawnDrop(ResourceType.Thaumite, new Vector3(3, 0, 0));
-    }
-
-    public void spawnDeposit(ResourceType type, Vector3 spawnLocation)
-    {
-        switch (type)
-        {
-            case ResourceType.Bone:
-                GameObject thisDepo = Instantiate(bDeposit, spawnLocation, Quaternion.identity, depoSize);
-                deposits.Add(thisDepo.GetComponent<BoneDeposit>());
-                if (deposits.Count > 0)
-                {
-                    deposits.LastOrDefault().setPosition(spawnLocation);
-                }
-                break;
-            case ResourceType.Iron:
-                //resources.Add(new IronDeposit());
-                break;
-        }
     }
 
     public void spawnDrop(ResourceType type, Vector3 spawnLocation)
@@ -89,6 +72,18 @@ public class ResourceManager : MonoBehaviour
                 thauCom.setGameObject(thisThau);
                 resources.Add(thauCom);
                 break;
+            case ResourceType.Food:
+                GameObject thisFood = Instantiate(thaumite, spawnLocation, Quaternion.identity);
+                FoodDrop foodCom = thisFood.GetComponent<FoodDrop>();
+                foodCom.setGameObject(thisFood);
+                resources.Add(foodCom);
+                break;
+            case ResourceType.Water:
+                GameObject thisWater = Instantiate(thaumite, spawnLocation, Quaternion.identity);
+                Thaumite waterCom = thisWater.GetComponent<Thaumite>();
+                waterCom.setGameObject(thisWater);
+                resources.Add(waterCom);
+                break;
         }
     }
 
@@ -97,6 +92,8 @@ public class ResourceManager : MonoBehaviour
         Bone,
         Stone,
         Iron,
-        Thaumite
+        Thaumite,
+        Food,
+        Water
     }
 }
