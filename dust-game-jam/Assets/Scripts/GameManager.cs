@@ -51,6 +51,12 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
         
     }
+    
+    // called to spawn enemy at position
+    public void spawnEnemy(Vector3 spawnLocation)
+    {
+        //GameObject enemy = Instantiate(enemy, spawnLocation, Quaternion.identity);
+    }
 
     public enum GameState
     {
