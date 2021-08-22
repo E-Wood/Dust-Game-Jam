@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class basicPawn : iPawn
@@ -10,8 +11,8 @@ public class basicPawn : iPawn
     private float startOfWork = 0;      //startOfWork == 0 means no work action has been started - is idling or moving
     private float workLength;
     private float workSpeed;
-
-    private Tool heldTool = new Tool(Tool.Type.Hands, Tool.Material.Thaumite);
+    
+    private Tool heldTool = new Tool(Tool.Type.Hands, Tool.Material.Hands);
 
     // Start is called before the first frame update
     void Start()
@@ -53,8 +54,12 @@ public class basicPawn : iPawn
         if (this.target != null) {
             if (Vector3EX.horizontalDistance(gameObject, this.target.gameObject) <= distanceToWork)
             {
-                if (this.heldTool.material >= this.target.getIdealTool().material   //minimum tool material met
-                && this.heldTool.type == this.target.getIdealTool().type)           //correct tool type met
+
+                if (this.target.GetType().IsSubclassOf(typeof(Pickup)))                   //if a pickup - pick it up instantly          
+                {
+                    this.target.doWork();
+                } else if ((this.heldTool.material >= this.target.getIdealTool().material   //minimum tool material met
+                           && this.heldTool.type == this.target.getIdealTool().type))       //correct tool type met
                 {
                     //hooray! we can do this task!
                     

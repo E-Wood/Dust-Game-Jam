@@ -76,8 +76,16 @@ PrefabInstance:
       value: pfPawn Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3071192162740276482, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071192162740276482, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}
       propertyPath: m_TagString
       value: Unit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071192162740276483, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7460172041712396661, guid: 5ad3d3fdd793ec34087768599506d34c, type: 3}
       propertyPath: speed
