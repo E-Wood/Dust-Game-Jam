@@ -20,6 +20,8 @@ public class basicPawn : iPawn
     
     private Tool heldTool = new Tool(Tool.Type.Hands, Tool.Material.Thaumite);
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +62,10 @@ public class basicPawn : iPawn
 
     override public void doWork()
     {
+        animator.SetBool("isMoving", false);
+
         if (this.target != null) {
+            
             if (Vector3EX.horizontalDistance(gameObject, this.target.gameObject) <= distanceToWork)
             {
 
@@ -76,6 +81,8 @@ public class basicPawn : iPawn
                     if (startOfWork == 0)
                     {
                         startOfWork = Time.time;
+                        target.startAnimation();
+                        animator.SetBool(target.getAction(), true); //start the animation
                     } if (Time.time - startOfWork > workLength)
                     {
                         this.target.doWork();
@@ -88,6 +95,7 @@ public class basicPawn : iPawn
                 }
             } else
             {
+                animator.SetBool("isMoving", true);
                 moveToTarget();
                 startOfWork = 0;
             }
@@ -101,10 +109,10 @@ public class basicPawn : iPawn
         {
             Vector3 movementVector = new Vector3(0, 0, 0);
             if (transform.position.x < this.target.transform.position.x) {
-                movementVector.x = 1 * speed;
+                movementVector.x = 1 * 0.02f;
             } else if (transform.position.x > this.target.transform.position.x)
             {
-                movementVector.x = -1 * speed;
+                movementVector.x = -1 * 0.02f;
             }
 
             transform.position += movementVector;

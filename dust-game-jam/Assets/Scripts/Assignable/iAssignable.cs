@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,11 +15,12 @@ public class iAssignable : MonoBehaviour
         // sets position
         this.position = pos;
     }
+
     public Vector3 getPosition()
     {
         return position;
     }
-    
+
     public void setIdealTool(Tool tool)
     {
         this.idealTool = tool;
@@ -28,8 +30,21 @@ public class iAssignable : MonoBehaviour
     {
         return this.idealTool;
     }
-    
-    //Called by pawns when in range of targeted assignable.
+
+    public virtual void startAnimation()
+    {
+    }
+
+    public virtual void endAnimation()
+    {
+    }
+
+    public virtual String getAction()
+    {
+        return "";
+    }
+
+//Called by pawns when in range of targeted assignable.
     public virtual void doWork()
     {
         // TODO: Override this in extending classes
