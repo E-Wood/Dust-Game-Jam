@@ -7,11 +7,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    private Inventory inventory;
-
-    public GameState State;
-
-    public GameObject colonist;
+    public GameObject PawnOne;
+    public GameObject PawnTwo;
+    public GameObject PawnThree;
+    public GameObject PawnFour;
     public GameObject shrine;
     
     // resources to keep track of state - your code is perfect the way it is <3
@@ -55,15 +54,16 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        inventory = new Inventory();
     }
-
-    public static event Action<GameState> OnGameStateChanged; 
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(shrine, new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(shrine, new Vector3(0, -1.5f, 0), Quaternion.identity);
+        Instantiate(PawnOne, new Vector3(-4, -1, 0), Quaternion.identity);
+        Instantiate(PawnTwo, new Vector3(-2, -1, 0), Quaternion.identity);
+        Instantiate(PawnThree, new Vector3(2, -1, 0), Quaternion.identity);
+        Instantiate(PawnFour, new Vector3(4, -1, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -72,39 +72,5 @@ public class GameManager : MonoBehaviour
         float realTime = Time.time;
         int timeOfDay = (int) ((Math.Floor(realTime) + 240) / 60) % 24; //start time at 4am (240 seconds)
         timeText.text = "Time: " + timeOfDay;
-    }
-
-    public void UpdateGameState(GameState newState)
-    {
-        State = newState;
-        
-        // we can use a switch here to update certain aspects of the game state
-        // these are defined in the enumerator
-        // we can leave this empty for now
-        // is there a change? if so, invoke function
-        OnGameStateChanged?.Invoke(newState);
-        
-    }
-    
-    // called to spawn enemy at position
-    public void spawnEnemy(Vector3 spawnLocation)
-    {
-        //GameObject enemy = Instantiate(enemy, spawnLocation, Quaternion.identity);
-    }
-
-    public enum GameState
-    {
-        // things we need to look out for, so TBD
-        // resources
-        /*
-         * Bone
-         * Stone
-         * Iron
-         * Thaumite
-         * Food
-         * Water
-         * Day
-         * Night
-         */
     }
 }
