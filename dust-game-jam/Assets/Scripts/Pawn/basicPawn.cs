@@ -12,7 +12,7 @@ public class basicPawn : iPawn
     private float workLength;
     private float workSpeed;
     
-    private Tool heldTool = new Tool(Tool.Type.Hands, Tool.Material.Thaumite);
+    private Tool heldTool = new Tool(Tool.Type.Hands, Tool.Material.Hands);
 
     // Start is called before the first frame update
     void Start()
