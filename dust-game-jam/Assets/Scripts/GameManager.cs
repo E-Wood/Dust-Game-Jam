@@ -70,7 +70,6 @@ public class GameManager : MonoBehaviour
     {
         float realTime = Time.time;
         int timeOfDay = (int) ((Math.Floor(realTime) + 240) / 60) % 24; //start time at 4am (240 seconds)
-        Debug.Log(Time.time);
         timeText.text = "Time: " + timeOfDay;
     }
 
