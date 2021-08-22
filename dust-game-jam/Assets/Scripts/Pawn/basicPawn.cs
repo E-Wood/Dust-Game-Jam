@@ -12,12 +12,21 @@ public class basicPawn : iPawn
     private float workLength;
     private float workSpeed;
     
-    private Tool heldTool = new Tool(Tool.Type.Hands, Tool.Material.Hands);
+    public Needs hunger;
+    public Needs sleep;
+    public Needs water;
+
+    public CurrentTool currentTool;
+    
+    private Tool heldTool = new Tool(Tool.Type.Hands, Tool.Material.Thaumite);
 
     // Start is called before the first frame update
     void Start()
     {
         calculateWorkSpeed();
+        hunger.setDepletionRate(0.1f);
+        sleep.setDepletionRate(0.2f);
+        water.setDepletionRate(0.3f);
     }
     
     //---------------------------TOOL SHIT, COULD BE MOVED TO SUBCLASS???----------------------------
